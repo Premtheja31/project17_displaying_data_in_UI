@@ -1,0 +1,41 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+    <style>
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        </style>
+</head>
+<body>
+    <center>
+        <h1 class="text-primary">Topic Table</h1>
+        <table border="2px solid black">
+        <colgroup>
+        <col span="2" style="background-color: #D6EEEE">
+        </colgroup>
+            <thead>
+              <tr>
+                <th border="2px solid black">topic_name</th>
+              </tr>
+            </thead>
+        {% for i in LTO %}
+            <tbody>
+              <tr>
+                <td border="2px solid black">{{i.topic_name}}</td>
+              </tr>
+              </tbody>
+        {% endfor %}
+          </table>
+
+    </center>
+    
+</body>
+</html>
